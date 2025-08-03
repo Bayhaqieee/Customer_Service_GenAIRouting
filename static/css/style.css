@@ -1,0 +1,127 @@
+/* File: static/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #1c1e21;
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #dddfe2;
+}
+
+#user-info-form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#user-info-form input {
+    padding: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#user-info-form button, #send-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1877f2;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#user-info-form button:hover, #send-btn:hover {
+    background-color: #166fe5;
+}
+
+#chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 75%;
+    line-height: 1.4;
+}
+
+.user-message {
+    background-color: #0084ff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+    background-color: #e4e6eb;
+    color: #050505;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.bot-message .agent-info {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: #65676b;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+}
+
+#input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #dddfe2;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 18px;
+    resize: none;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.hidden {
+    display: none !important;
+}

@@ -61,6 +61,7 @@ typing-extensions
 pytest
 pytest-asyncio
 streamlit
+flask
 
 sentence-transformers
 faiss-cpu
