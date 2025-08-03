@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hybrid Customer Service</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Hybrid AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" data-bot-avatar-url="{{ url_for('static', filename='images/bot_icon.svg') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Hybrid AI Customer Service</h1>
-        <div id="user-info-form">
-            <h2>Welcome! Please tell us who you are.</h2>
-            <input type="text" id="user-name" placeholder="Your Name" required>
-            <input type="text" id="user-role" placeholder="Your Role (e.g., Customer, Manager)" required>
-            <button id="start-chat-btn">Start Chat</button>
+    <div class="chat-app">
+        <div id="user-info-form" class="user-info-container">
+            <div class="form-card">
+                <img src="{{ url_for('static', filename='images/bot_icon.svg') }}" alt="AI Icon" class="form-icon">
+                <h2>Welcome to the AI Service Desk</h2>
+                <p>Please tell us a bit about yourself to get started.</p>
+                <input type="text" id="user-name" placeholder="Enter your name" required>
+                <input type="text" id="user-role" placeholder="Enter your role (e.g., Developer)" required>
+                <button id="start-chat-btn">Start Chat</button>
+            </div>
         </div>
-
-        <div id="chat-container" class="hidden">
-            <div id="chat-box">
-                <div class="message bot-message">
-                    <p>Hello! I'm your AI assistant. How can I help you today?</p>
+        <div id="chat-container" class="chat-container hidden">
+            <header class="chat-header">
+                <h3>Hybrid AI Assistant</h3>
+                <p>Powered by Azure & Ollama</p>
+            </header>
+            <main id="chat-box" class="chat-box"></main>
+            <footer class="chat-input-area">
+                <div class="input-wrapper">
+                    <textarea id="message-input" placeholder="Enter your message..." rows="1"></textarea>
+                    <button id="send-btn" aria-label="Send message">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
-            </div>
-            <div id="input-container">
-                <textarea id="message-input" placeholder="Type your message here..."></textarea>
-                <button id="send-btn">Send</button>
-            </div>
+            </footer>
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
